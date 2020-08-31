@@ -26,7 +26,6 @@ namespace NotesServer.AppHost
             var appSettings = new AppSettings();
 
 
-            // var redisServerAddress = ServiceAddressSettings.GetServiceAddress(Models.ServiceType.RedisServer);
             container.Register<IRedisClientsManager>(c => new PooledRedisClientManager("myadress:6379"));
             container.Register(c => c.Resolve<IRedisClientsManager>().GetCacheClient());
 
